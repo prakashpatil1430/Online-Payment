@@ -1,0 +1,9 @@
+{% if request.user.is_authenticated %}
+<h4>{{ request.user.username }}</h4>
+<a href="{% url 'userauths:sign-out' %}">Sign Out</a>
+
+{% else %}
+<a href="{% url 'userauths:sign-in' %}">Sign in</a>
+<a href="{% url 'userauths:sign-up' %}">Sign up</a>
+
+{% endif %}
